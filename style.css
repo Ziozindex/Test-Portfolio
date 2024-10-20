@@ -1,69 +1,142 @@
+
 body {
     font-family: Arial, sans-serif;
     color: white;
     background-image: url("IMG_0440.webp");
     background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
 .Main-Header {
-    background: rgb(51, 51, 51, 0.2);
+    background: rgba(51, 51, 51, 0.2);
     border-radius: 10px;
-    padding: 40px;
-    margin-top: 20px;
+    padding: 20px;
     backdrop-filter: blur(6.2px);
     -webkit-backdrop-filter: blur(6.2px);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgb(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     text-align: center;
-    max-width: 400px;
+    width: 100%;
+    max-width: 300px;
+    box-sizing: border-box;
 }
 
 .Profile img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin: 0 auto;
-  border: 2px solid white;
-  animation: breathe 4s ease-in-out infinite;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 15px;
+    border: 2px solid white;
+    animation: breathe 4s ease-in-out infinite;
 }
 
 @keyframes breathe {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-  100% {
-    transform: scale(1);
-  }
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
 }
 
 .Name {
     color: #fff;
     text-align: center;
-    -webkit-animation: glow 1s ease-in-out infinite alternate;
-    -moz-animation: glow 1s ease-in-out infinite alternate;
+    font-size: 1.5em;
+    margin-bottom: 15px;
     animation: glow 1s ease-in-out infinite alternate;
 }
 
-@-webkit-keyframes glow{
-    from {
-        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ffffff, 0 0 40px #ffffff, 0 0 50px #ffffff, 0 0 60px #ffffff, 0 0 70px #ffffff;
-    }
+@keyframes glow {
+    from { text-shadow: 0 0 5px #fff, 0 0 10px #fff; }
+    to { text-shadow: 0 0 10px #fff, 0 0 15px #fff; }
+}
 
-    to {
-        text-shadow: 0 0 20px #fff, 0 0 30px #ffffff, 0 0 40px #ffffff, 0 0 50px #ffffff, 0 0 60px #ffffff, 0 0 70px #ffffff, 0 0 80px #ffffff;
-    }
+.Contacts {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .Contacts img {
-    margin-top: 20px;
-    width: 50px;
-    height: 50px;
-    padding: 10px;
-    color: white;
-    filter: drop-shadow(0 0 10px #fff);;
-    
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    margin: 5px;
+    filter: drop-shadow(0 0 5px #fff);
+    transition: transform 0.3s ease;
+}
+
+.Contacts img:hover {
+    transform: scale(1.1);
+}
+
+/* Tablet styles */
+@media (min-width: 600px) {
+    body {
+        padding: 20px;
+    }
+
+    .Main-Header {
+        padding: 30px;
+        max-width: 400px;
+    }
+
+    .Profile img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .Name {
+        font-size: 1.8em;
+    }
+
+    .Contacts img {
+        width: 45px;
+        height: 45px;
+        padding: 10px;
+    }
+}
+
+/* Desktop styles */
+@media (min-width: 1024px) {
+    .Main-Header {
+        padding: 40px;
+        max-width: 500px;
+    }
+
+    .Profile img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .Name {
+        font-size: 2em;
+    }
+
+    .Contacts img {
+        width: 50px;
+        height: 50px;
+        padding: 12px;
+    }
+}
+
+/* Large desktop styles */
+@media (min-width: 1440px) {
+    .Main-Header {
+        max-width: 600px;
+    }
+
+    .Profile img {
+        width: 180px;
+        height: 180px;
+    }
+
+    .Name {
+        font-size: 2.2em;
+    }
 }
