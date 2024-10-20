@@ -7,7 +7,7 @@ body {
     background-position: center;
     background-attachment: fixed;
     margin: 0;
-    padding: 5vw;
+    padding: clamp(15px, 5vw, 40px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,24 +17,23 @@ body {
 .Main-Header {
     background: rgba(51, 51, 51, 0.2);
     border-radius: 10px;
-    padding: 5vw;
+    padding: clamp(15px, 5vw, 40px);
     backdrop-filter: blur(6.2px);
     -webkit-backdrop-filter: blur(6.2px);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.3);
     text-align: center;
     width: 100%;
-    max-width: 90vw;
+    max-width: clamp(300px, 90vw, 600px);
     box-sizing: border-box;
 }
 
 .Profile img {
-    width: 30vw;
-    max-width: 100px;
-    height: auto;
+    width: clamp(80px, 25vw, 180px);
+    height: clamp(80px, 25vw, 180px);
     border-radius: 50%;
     object-fit: cover;
-    margin: 0 auto 4vw;
+    margin: 0 auto clamp(10px, 3vw, 25px);
     border: 2px solid white;
     animation: breathe 4s ease-in-out infinite;
 }
@@ -47,8 +46,8 @@ body {
 .Name {
     color: #fff;
     text-align: center;
-    font-size: 1.2em;
-    margin-bottom: 4vw;
+    font-size: clamp(1.2rem, 4vw, 2rem);
+    margin-bottom: clamp(10px, 3vw, 25px);
     animation: glow 1s ease-in-out infinite alternate;
 }
 
@@ -61,14 +60,13 @@ body {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    gap: clamp(5px, 2vw, 15px);
 }
 
 .Contacts img {
-    width: 10vw;
-    max-width: 40px;
-    height: auto;
-    padding: 2vw;
-    margin: 1vw;
+    width: clamp(35px, 8vw, 55px);
+    height: clamp(35px, 8vw, 55px);
+    padding: clamp(5px, 1.5vw, 12px);
     filter: drop-shadow(0 0 5px #fff);
     transition: transform 0.3s ease;
 }
@@ -77,77 +75,53 @@ body {
     transform: scale(1.1);
 }
 
-/* Tablet styles */
-@media (min-width: 600px) {
-    body {
-        padding: 4vw;
-    }
-
+/* Small tablet styles */
+@media (min-width: 480px) {
     .Main-Header {
-        padding: 4vw;
-        max-width: 80vw;
+        max-width: clamp(350px, 80vw, 500px);
     }
+}
 
+/* Larger tablet styles */
+@media (min-width: 768px) {
+    .Main-Header {
+        max-width: clamp(400px, 70vw, 550px);
+    }
+    
     .Profile img {
-        max-width: 120px;
-        margin-bottom: 3vw;
+        width: clamp(100px, 20vw, 150px);
+        height: clamp(100px, 20vw, 150px);
     }
-
+    
     .Name {
-        font-size: 1.5em;
-        margin-bottom: 3vw;
-    }
-
-    .Contacts img {
-        max-width: 45px;
-        padding: 1.5vw;
-        margin: 0.8vw;
+        font-size: clamp(1.5rem, 3.5vw, 2.2rem);
     }
 }
 
 /* Desktop styles */
 @media (min-width: 1024px) {
-    body {
-        padding: 3vw;
-    }
-
     .Main-Header {
-        padding: 3vw;
-        max-width: 60vw;
+        max-width: clamp(450px, 60vw, 600px);
     }
-
+    
     .Profile img {
-        max-width: 150px;
-        margin-bottom: 2vw;
+        width: clamp(120px, 15vw, 180px);
+        height: clamp(120px, 15vw, 180px);
     }
-
+    
     .Name {
-        font-size: 1.8em;
-        margin-bottom: 2vw;
+        font-size: clamp(1.8rem, 3vw, 2.5rem);
     }
-
+    
     .Contacts img {
-        max-width: 50px;
-        padding: 1vw;
-        margin: 0.5vw;
+        width: clamp(45px, 6vw, 60px);
+        height: clamp(45px, 6vw, 60px);
     }
 }
 
 /* Large desktop styles */
 @media (min-width: 1440px) {
     .Main-Header {
-        max-width: 50vw;
-    }
-
-    .Profile img {
-        max-width: 180px;
-    }
-
-    .Name {
-        font-size: 2em;
-    }
-
-    .Contacts img {
-        max-width: 55px;
+        max-width: clamp(500px, 50vw, 700px);
     }
 }
