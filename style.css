@@ -1,4 +1,4 @@
-
+/* Base styles (mobile first) */
 body {
     font-family: Arial, sans-serif;
     color: white;
@@ -7,34 +7,36 @@ body {
     background-position: center;
     background-attachment: fixed;
     margin: 0;
-    padding: clamp(15px, 5vw, 40px);
+    padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    box-sizing: border-box;
 }
 
 .Main-Header {
-    background: rgba(51, 51, 51, 0.2);
-    border-radius: 10px;
-    padding: clamp(15px, 5vw, 40px);
-    backdrop-filter: blur(6.2px);
-    -webkit-backdrop-filter: blur(6.2px);
+    background: rgba(51, 51, 51, 0.7);
+    border-radius: 15px;
+    padding: 25px 20px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.3);
     text-align: center;
     width: 100%;
-    max-width: clamp(300px, 90vw, 600px);
+    max-width: 320px;
     box-sizing: border-box;
 }
 
 .Profile img {
-    width: clamp(80px, 25vw, 180px);
-    height: clamp(80px, 25vw, 180px);
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     object-fit: cover;
-    margin: 0 auto clamp(10px, 3vw, 25px);
-    border: 2px solid white;
+    margin: 0 auto 20px;
+    border: 3px solid white;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
     animation: breathe 4s ease-in-out infinite;
 }
 
@@ -46,82 +48,106 @@ body {
 .Name {
     color: #fff;
     text-align: center;
-    font-size: clamp(1.2rem, 4vw, 2rem);
-    margin-bottom: clamp(10px, 3vw, 25px);
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     animation: glow 1s ease-in-out infinite alternate;
 }
 
 @keyframes glow {
     from { text-shadow: 0 0 5px #fff, 0 0 10px #fff; }
-    to { text-shadow: 0 0 10px #fff, 0 0 15px #fff; }
+    to { text-shadow: 0 0 10px #fff, 0 0 20px #fff; }
 }
 
 .Contacts {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: clamp(5px, 2vw, 15px);
+    gap: 15px;
 }
 
 .Contacts img {
-    width: clamp(35px, 8vw, 55px);
-    height: clamp(35px, 8vw, 55px);
-    padding: clamp(5px, 1.5vw, 12px);
-    filter: drop-shadow(0 0 5px #fff);
-    transition: transform 0.3s ease;
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.Contacts img:hover {
+.Contacts img:hover, .Contacts img:focus {
     transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Small tablet styles */
-@media (min-width: 480px) {
-    .Main-Header {
-        max-width: clamp(350px, 80vw, 500px);
+/* Tablet styles */
+@media (min-width: 600px) {
+    body {
+        padding: 30px;
     }
-}
 
-/* Larger tablet styles */
-@media (min-width: 768px) {
     .Main-Header {
-        max-width: clamp(400px, 70vw, 550px);
+        max-width: 400px;
+        padding: 30px 25px;
     }
-    
+
     .Profile img {
-        width: clamp(100px, 20vw, 150px);
-        height: clamp(100px, 20vw, 150px);
+        width: 140px;
+        height: 140px;
     }
-    
+
     .Name {
-        font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+        font-size: 1.8rem;
+    }
+
+    .Contacts img {
+        width: 45px;
+        height: 45px;
+        padding: 10px;
     }
 }
 
 /* Desktop styles */
 @media (min-width: 1024px) {
+    body {
+        padding: 40px;
+    }
+
     .Main-Header {
-        max-width: clamp(450px, 60vw, 600px);
+        max-width: 480px;
+        padding: 40px 30px;
     }
-    
+
     .Profile img {
-        width: clamp(120px, 15vw, 180px);
-        height: clamp(120px, 15vw, 180px);
+        width: 160px;
+        height: 160px;
+        margin-bottom: 25px;
     }
-    
+
     .Name {
-        font-size: clamp(1.8rem, 3vw, 2.5rem);
+        font-size: 2rem;
+        margin-bottom: 25px;
     }
-    
+
     .Contacts img {
-        width: clamp(45px, 6vw, 60px);
-        height: clamp(45px, 6vw, 60px);
+        width: 50px;
+        height: 50px;
+        padding: 12px;
     }
 }
 
 /* Large desktop styles */
 @media (min-width: 1440px) {
     .Main-Header {
-        max-width: clamp(500px, 50vw, 700px);
+        max-width: 520px;
+    }
+
+    .Profile img {
+        width: 180px;
+        height: 180px;
+    }
+
+    .Name {
+        font-size: 2.2rem;
     }
 }
