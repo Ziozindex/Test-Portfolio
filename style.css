@@ -7,7 +7,7 @@ body {
     background-position: center;
     background-attachment: fixed;
     margin: 0;
-    padding: 15px;
+    padding: 5vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,23 +17,24 @@ body {
 .Main-Header {
     background: rgba(51, 51, 51, 0.2);
     border-radius: 10px;
-    padding: 20px;
+    padding: 5vw;
     backdrop-filter: blur(6.2px);
     -webkit-backdrop-filter: blur(6.2px);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.3);
     text-align: center;
     width: 100%;
-    max-width: 300px;
+    max-width: 90vw;
     box-sizing: border-box;
 }
 
 .Profile img {
-    width: 100px;
-    height: 100px;
+    width: 30vw;
+    max-width: 100px;
+    height: auto;
     border-radius: 50%;
     object-fit: cover;
-    margin: 0 auto 15px;
+    margin: 0 auto 4vw;
     border: 2px solid white;
     animation: breathe 4s ease-in-out infinite;
 }
@@ -46,8 +47,8 @@ body {
 .Name {
     color: #fff;
     text-align: center;
-    font-size: 1.5em;
-    margin-bottom: 15px;
+    font-size: 1.2em;
+    margin-bottom: 4vw;
     animation: glow 1s ease-in-out infinite alternate;
 }
 
@@ -63,10 +64,11 @@ body {
 }
 
 .Contacts img {
-    width: 40px;
-    height: 40px;
-    padding: 8px;
-    margin: 5px;
+    width: 10vw;
+    max-width: 40px;
+    height: auto;
+    padding: 2vw;
+    margin: 1vw;
     filter: drop-shadow(0 0 5px #fff);
     transition: transform 0.3s ease;
 }
@@ -78,40 +80,67 @@ body {
 /* Tablet styles */
 @media (min-width: 600px) {
     body {
-        padding: 20px;
+        padding: 4vw;
     }
 
     .Main-Header {
-        padding: 30px;
-        max-width: 400px;
+        padding: 4vw;
+        max-width: 80vw;
     }
 
     .Profile img {
-        width: 120px;
-        height: 120px;
+        max-width: 120px;
+        margin-bottom: 3vw;
     }
 
     .Name {
-        font-size: 1.8em;
+        font-size: 1.5em;
+        margin-bottom: 3vw;
     }
 
     .Contacts img {
-        width: 45px;
-        height: 45px;
-        padding: 10px;
+        max-width: 45px;
+        padding: 1.5vw;
+        margin: 0.8vw;
     }
 }
 
 /* Desktop styles */
 @media (min-width: 1024px) {
+    body {
+        padding: 3vw;
+    }
+
     .Main-Header {
-        padding: 40px;
-        max-width: 500px;
+        padding: 3vw;
+        max-width: 60vw;
     }
 
     .Profile img {
-        width: 150px;
-        height: 150px;
+        max-width: 150px;
+        margin-bottom: 2vw;
+    }
+
+    .Name {
+        font-size: 1.8em;
+        margin-bottom: 2vw;
+    }
+
+    .Contacts img {
+        max-width: 50px;
+        padding: 1vw;
+        margin: 0.5vw;
+    }
+}
+
+/* Large desktop styles */
+@media (min-width: 1440px) {
+    .Main-Header {
+        max-width: 50vw;
+    }
+
+    .Profile img {
+        max-width: 180px;
     }
 
     .Name {
@@ -119,24 +148,6 @@ body {
     }
 
     .Contacts img {
-        width: 50px;
-        height: 50px;
-        padding: 12px;
-    }
-}
-
-/* Large desktop styles */
-@media (min-width: 1440px) {
-    .Main-Header {
-        max-width: 600px;
-    }
-
-    .Profile img {
-        width: 180px;
-        height: 180px;
-    }
-
-    .Name {
-        font-size: 2.2em;
+        max-width: 55px;
     }
 }
